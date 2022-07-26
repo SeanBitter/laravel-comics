@@ -1,1 +1,11 @@
-//
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import url('https://fonts.googleapis.com/css2?family=Asap+Condensed:wght@500&display=swap');
+@import "partials/header";
+@import "buttons";
+@import "variables";
+
+body {
+    font-family: 'Asap Condensed', sans-serif;
+    color: white;
+    font-size: 0.8rem;
+}
