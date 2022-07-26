@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>DC Comics</title>
   <link rel="stylesheet" href="{{ asset('css/app.css') }}">
 </head>
 <body>
@@ -13,10 +13,12 @@
   </header>
 
   <main>
-
+    @yield('main-section')
+    @include('partials.blue-banner')
   </main>
 
   @include('partials.footer')
+  @include('partials.sign-up-banner')
 
 </body>
 </html>
