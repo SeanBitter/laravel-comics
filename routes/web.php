@@ -16,5 +16,29 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     $comics = config("comics");
 
-    return view('home', compact("comics"));
-});
+    return view('comics.index', compact("comics"));
+})->name("comics.index");
+
+Route::get('/{id}', function ($id) {
+    $comics = config("comics");
+
+    $foundComic = null;
+
+    foreach ($comics as $card) {
+        if ($card["id"] === (int)$id) {
+            $foundComic = $card;
+            break;
+        }
+    }
+
+    if (is_null($foundComic)) {
+        abort("404");
+    }
+
+    return view(
+        "comics.show",
+        [
+            "card" => $foundComic
+        ]
+    );
+})->name("comics.show");
